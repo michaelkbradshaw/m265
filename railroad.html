@@ -7,9 +7,12 @@
                                  <img src="railroaddiagram_list.png" alt="RD of Lists"> 
                       <hr />
 		      <h3> Tables </h3>
-                                 <img src="railroad_tables_colored.jpg" alt="RD of Tables">
+                                 <img src="railroad_tables_color.jpg" alt="RD of Tables">
                      
-		   <p><b>Example</b> <br />Tables: Truth table representing p->q</p>
+		   <p><b>Example use</b> <br />Tables: Truth table representing p->q</p>
+		   <p> For simplification, the table railroad diagram above did not account for column titles in HTML tables.
+			   The example table below regarding truth tables will be followed by a railroad diagram to explore its specific
+			   path. </p>
 		<table>
 		<thead>
 		<tr>
@@ -41,6 +44,20 @@
 			<td> T </td>
 		</tr>
 		</tbody>		
-	</table>	
+	</table>
+	<img src="railroad_table_ex.jpg">
+	<p> The image above represents the implementation path that the above table (truth table) follows.
+		<ol>
+			<li> Opening tag for table </li>
+			<li> Opening tag for table row, row 1 </li>
+			<li> Opening tag for table data, row 1 column 1 </li>
+			<li> The "data" is entered for column 1 row 1 </li>
+			<li> Closing tag for table data, row 1 column 1 </li>
+			<li> Repeat steps 3,4, and 5 for each column in row 1 of the truth table (x3) </li>
+			<li> Closing tag for table row, row 1 </li>
+			<li> Repeat step 2 for row n in the truth table and then apply steps 3,4, and 5 for each column in row n </li>
+			<li> Closing tag for table </li>
+		   </ol>
+		   </p>
            </body>
 </html>
