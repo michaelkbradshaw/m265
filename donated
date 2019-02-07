@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Elephants</title>
+  </head>
+  <body>
+    
+    
+    <h1> Donate to our Zoo!</h1>
+    
+    <a href="index.html">Home</a>
+    <a href="elephant.html">Elephants</a>
+    <a href="chimpanzees.html">Chimpanzees</a>
+    <a href="giraffes.html">Giraffes</a>
+    <a href="donate.html">Donate</a>
+    <a href="note.html">Notes</a>
+    <p></p>
+    <img src="elephant.jpg">
+    <p></p>
+    <h3> Our zoo is a non-profit organization and runs on donations from people like you. We put animals before profit. </h3>
+      <p>Feel free to donate. You are not obligated to do so, but all donations are appreciated. (This amount is non-monetary)</p>
+     <form action="index.html" />
+         Name: <input type = "text" name = "first_name" />
+         <br>
+         Payment ID: <input type = "text" name = "last_name" />
+      <br>
+         Amount: <input type = "text" name = "last_name" />
+    <br>
+      <input type="submit" value="Submit" name="submit" />
+      </form>
+    
+
+  </body>
+</html>
