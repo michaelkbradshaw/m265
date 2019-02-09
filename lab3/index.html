@@ -1,10 +1,18 @@
 <html>
 <body>
 
-<img id="box1" src="images\blackbox.jpeg" onclick="" disabled=false />
-<img id="box2"src="images\blackbox.jpeg" onclick="" disabled=false />
-<img id="box3"src="images\blackbox.jpeg" onclick="" disabled=false />
-<p></p>
+<img id="box1" src="images\blackbox.jpeg" onclick="clicked_1()" disabled=false type="button"/>
+<img id="box2"src="images\blackbox.jpeg" onclick="clicked_2()" disabled=false type="button" />
+<img id="box3"src="images\blackbox.jpeg" onclick="clicked_3()" disabled=false type="button" />
+<p id="question"></p>
+<form id="answer" action="/action_page.php">
+  <label> Answer:<input type="text" value="" /></label>
+</form>
+<p id="result"></p>
+<p id="present"></p>
+<button onclick = "">Submit</button>
+<p id="next"></p>
+<form action="" >
 
 <script src="game.js">
 </script>
