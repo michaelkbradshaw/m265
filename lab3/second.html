@@ -1,0 +1,24 @@
+<html>
+<body>
+<link href="game_style.css" />
+<p id="score"></p>
+<img id="box4" src="images\blackbox.jpeg" onclick="clicked_1()" disabled=false type="button"/>
+<img id="box5"src="images\blackbox.jpeg" onclick="clicked_2()" disabled=false type="button" />
+<img id="box6"src="images\blackbox.jpeg" onclick="clicked_3()" disabled=false type="button" />
+<p id="question"></p>
+<form id="answer" action="/action_page.php">
+<label> Answer:<input type="text" value="" /></label>
+</form>
+<p id="result"></p>
+<p id="present"></p>
+<button onclick ="answerQ()">Submit</button>
+
+
+<form id="procede" action="">
+<button disabled=true id ="next" type="button">Next Level</button>
+</form>
+<script src="game.js">
+</script>
+
+</body>
+</html>

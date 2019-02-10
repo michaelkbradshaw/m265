@@ -1,6 +1,9 @@
 <html>
+<head><title>Game:Player 1</title>
+<link href="game_style.css" type="text/css" rel="stylesheet"/>
+</head>
 <body>
-<link href="game_style.css" />
+
 
 <img id="box1" src="images\blackbox.jpeg" onclick="clicked_1()" disabled=false type="button"/>
 <img id="box2"src="images\blackbox.jpeg" onclick="clicked_2()" disabled=false type="button" />
@@ -11,10 +14,14 @@
 </form>
 <p id="result"></p>
 <p id="present"></p>
-<button onclick = "">Submit</button>
-<p id="next"></p>
-<form id="procede" action="">
+<button onclick ="answerQ()" id="submit"  type="button">Submit</button>
+<br />
 
+<form id="procede" action="">
+<br />
+<button disabled=true id ="next" type="button">Next Level</button>
+</form>
+<p id="score"></p>
 <script src="game.js">
 </script>
 

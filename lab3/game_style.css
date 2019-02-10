@@ -1,0 +1,14 @@
+body{
+  background-color: 778899;
+}
+p{
+  color:white;
+  font-size:32px;
+}
+form{
+  color:white;
+  font-size:26px;
+}
+#score{
+  text-align: left;
+}
