@@ -42,15 +42,25 @@ var answerQ = function()
     result = document.getElementById("result");
     result.innerText="Correct";
     score[p]+=1;
-    document.getElementById("submit").removeAttribute("disabled");
+    //document.getElementById("submit").removeAttribute("disabled");
+
     document.getElementById("submit").disabled=true;
-    document.getElementById("score").innerText="Player" + p+1 + ", Score: "+ score[p];
+    document.getElementById("score1").innerText="Player 1, Score: "+ score[p];\
+    // To ensure player 2 is ALWAYS presnted correctly
+    if (p == 0) {
+      document.getElementById("score2").innerText="Player 2, Score: "+ score[p+1];
+      }
+    else {
+      document.getElementById("score2").innerText="Player 2, Score: "+ score[p];
+      }
+    }
   }
+
+  // CHECK for INVLAID user INPUT, such as submitting without entering
   else if(inputQ==""){
     result = document.getElementById("result");
     result.innerText="Incorrect";
     document.getElementById("present").innerText="Invalid Entry: Submitted without entering. Try again!";
-
     }
 
   // Open next level after all boxes have been clicked
@@ -73,7 +83,6 @@ var clicked_1 = function()
     document.getElementById("present").innerText="";
 
     var t = document.getElementById("box1");
-    t.setAttribute("disabled","");
     t.disabled=true;
     permit[0]=true;
 
@@ -92,8 +101,6 @@ var clicked_2 = function()
     var t = document.getElementById("box2");
     t.disabled=true;
     permit[1]=true;
-
-
 
     var x = document.getElementById("question");
     x.innerText=everything[1].question;
