@@ -1,8 +1,10 @@
 
 var score = 0;
+var answer = "";
 var answerArr = ["Anananarivo", "Baghdad", "Caracas"];
 
-var answerQ = function(answer)
+
+var answerQ = function()
 {
   var getElemId = document.getElementById("answer");
   console.log(getElemId);
@@ -21,16 +23,14 @@ var answerQ = function(answer)
   else {
     result = document.getElementById("result");
     result.innerText="Incorrect";
-
     }
-}
 
-var truth_b1 = getElementById("box1").getAttribute("disabled");
-var truth_b2 = getElementById("box2").getAttribute("disabled");
-var truth_b3 = getElementById("box3").getAttribute("disabled");
-if (truth_b1 && truth_b2 && truth_b3) {
-  setAttribute
-}
+  var truth_b1 = getElementById("box1").getAttribute("disabled");
+  var truth_b2 = getElementById("box2").getAttribute("disabled");
+  var truth_b3 = getElementById("box3").getAttribute("disabled");
+  if (truth_b1 && truth_b2 && truth_b3) {
+    document.getElementById("procede").setAttribute("action", "level2.html");
+  }
 }
 
 
@@ -41,10 +41,7 @@ var clicked_1 = function()
 
     var x = document.getElementById("question");
     x.innerText="What is the capital of Madagascar?";
-
-    answerQ(answerArr[0]);
-
-
+    answer = answerArr[0];
 }
 
 var clicked_2 = function()
@@ -53,9 +50,7 @@ var clicked_2 = function()
     t.setAttribute("disabled", "true");
     var x = document.getElementById("question");
     x.innerText="What is the capital of Iraq?";
-    answerQ(answerArr[1]);
-
-
+    answer = answerArr[1];
 }
 
 var clicked_3 = function()
@@ -64,7 +59,5 @@ var clicked_3 = function()
     t.setAttribute("disabled", "true");
     var x = document.getElementById("question");
     x.innerText="";
-
-    answerQ();
-
+    answer = answerArr[2];
 }
