@@ -2,12 +2,19 @@
 // GLOBAL VARIABLES
 var score_one = 0;
 var score_two = 0;
+
+
   // create a switch variable; after going to next page
   // for player two, update a global variable to correspond
   // to incremented index for score[]
   // index 0 is player 1; index 1 is player 2.
-var p = 0;
+var p_two_turn=false;
 var score = [0,0];
+if (document.getElementById("who").innerText=="Game:Player 2"){
+  p_two_turn=localStorage.getItem("bool_player");
+  score=localStorage.getItem("array_scores");
+}
+
 document.getElementById("score1").innerText="Player 1, Score: "+ score[0];
 document.getElementById("score2").innerText="Player 2, Score: "+ score[1];
   // REAL ANSWER
@@ -22,6 +29,8 @@ var everything =
 {capital: "Ottawa", question: "Is the capital of Canada Toronto, Montreal, or Ottawa?"},
 {capital: "Cairo", question: "What is the capital of Egypt?"},
 {capital: "Lima", question: "What is the capital of Peru?"}];
+
+
 
 // THIS FUNCTION IS CALLED BY CLICKING SUBMIT ANSWER ON WEBSPAGE
 // ITS PURPOSE IS TO STORE INPUTS, COMPARE INPUTS TO ANSWER,
@@ -41,13 +50,14 @@ var answerQ = function()
   // Compare user Answer Input to Answer -- INFORM CORRECTNESS
   document.getElementById("submit").disabled=true;
   var result;
-  if (inputQ == answer) {
+  if (inputQ == answer){
     result = document.getElementById("result");
     result.innerText="Correct";
-    score[p]+=1;
-    //document.getElementById("submit").removeAttribute("disabled");
-
-    }
+    if (p_two_turn==false)
+    {score[0]+=1;}
+    else
+    {score[1]+=1;}
+  }
   // CHECK for INVLAID user INPUT, such as submitting without entering
   else if(inputQ==""){
     result = document.getElementById("result");
@@ -58,28 +68,14 @@ var answerQ = function()
     result = document.getElementById("result");
     result.innerText="Incorrect";
   }
-
   // Display Scores + Player 2 presents correctly -- IFORM SCORE
   // two problems: when icorrect, player1 score 0. then if correct after incorrect,
   // both scores increase at the same time
   // PRESS INC TWICE on last image to be clicked.. problem
   // BUG FIXED below. P was making it to P=2, where P=2 is not a
   // valid index, which caused problems
-
-  if (p == 0) {
-    document.getElementById("score1").innerText="Player 1, Score: "+ score[p];
-    document.getElementById("score2").innerText="Player 2, Score: "+ score[p+1];
-    }
-  else if (p>1) {
-    document.getElementById("score1").innerText="Player 1, Score: "+ score[p-2];
-    document.getElementById("score2").innerText="Player 2, Score: "+ score[p-1];
-  }
-
-  else {
-    document.getElementById("score1").innerText="Player 1, Score: "+ score[p-1];
-    document.getElementById("score2").innerText="Player 2, Score: "+ score[p];
-    }
-
+  document.getElementById("score1").innerText="Player 1, Score: "+ score[0];
+  document.getElementById("score2").innerText="Player 2, Score: "+ score[1];
   // Open next level after all boxes have been clicked
   // PROBLEM: Cannot set disabled attributes, so cannot check this way
   // Update: using booleans in list instead. bools are set when image clicked
@@ -90,7 +86,7 @@ var answerQ = function()
     //document.getElementById("procede").setAttribute("action", "second.html");
     document.getElementById("next").removeAttribute("disabled");
     //Time to change the score for player 2
-    p=1;
+    p_two_turn=true;
   }
 }
 
@@ -151,6 +147,9 @@ var goNext = function(){
   document.getElementById('box1').disabled=false;
   document.getElementById('box2').disabled=false;
   document.getElementById('box3').disabled=false;
+  localStorage.setItem("array_scores", score);
+  localStorage.setItem("bool_player", p_two_turn);
+
   window.location="second.html";
 
 }
