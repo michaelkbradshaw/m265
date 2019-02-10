@@ -137,3 +137,8 @@ var clicked_3 = function()
     x.innerText=everything[2].question;
     answer = everything[2].capital;
 }
+
+var goNext = function(){
+  window.location="second.html";
+
+}
