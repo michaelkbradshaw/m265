@@ -36,41 +36,45 @@ var answerQ = function()
   }
   document.getElementById("present").innerHTML=inputQ;
 
-// Compare user Answer Input to Answer
+  // Compare user Answer Input to Answer -- INFORM CORRECTNESS
   var result;
   if (inputQ == answer) {
     result = document.getElementById("result");
     result.innerText="Correct";
     score[p]+=1;
     //document.getElementById("submit").removeAttribute("disabled");
-
     document.getElementById("submit").disabled=true;
-    document.getElementById("score1").innerText="Player 1, Score: "+ score[p];
-    // To ensure player 2 is ALWAYS presnted correctly
-    if (p == 0) {
-      document.getElementById("score2").innerText="Player 2, Score: "+ score[p+1];
-      }
-    else {
-      document.getElementById("score2").innerText="Player 2, Score: "+ score[p];
-      }
     }
-
-
   // CHECK for INVLAID user INPUT, such as submitting without entering
   else if(inputQ==""){
     result = document.getElementById("result");
     result.innerText="Incorrect";
     document.getElementById("present").innerText="Invalid Entry: Submitted without entering. Try again!";
     }
+  else {
+    result = document.getElementById("result");
+    result.innerText="Incorrect";
+  }
+
+  // Display Scores + Player 2 presents correctly -- IFORM SCORE
+  document.getElementById("score1").innerText="Player 1, Score: "+ score[p];
+  if (p == 0) {
+    document.getElementById("score2").innerText="Player 2, Score: "+ score[p+1];
+    }
+  else {
+    document.getElementById("score2").innerText="Player 2, Score: "+ score[p];
+    }
 
   // Open next level after all boxes have been clicked
   // PROBLEM: Cannot set disabled attributes, so cannot check this way
+  // Update: using booleans in list instead. bools are set when image clicked
   var truth_b1 = document.getElementById("box1").getAttribute("disabled");
   var truth_b2 = document.getElementById("box2").getAttribute("disabled");
   var truth_b3 = document.getElementById("box3").getAttribute("disabled");
   if (permit[0] && permit[1] && permit[2]) {
     //document.getElementById("procede").setAttribute("action", "second.html");
     document.getElementById("next").removeAttribute("disabled");
+    //Time to change the score for player 2
     p=1;
   }
 }
