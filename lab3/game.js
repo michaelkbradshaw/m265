@@ -57,11 +57,23 @@ var answerQ = function()
   }
 
   // Display Scores + Player 2 presents correctly -- IFORM SCORE
-  document.getElementById("score1").innerText="Player 1, Score: "+ score[p];
+  // two problems: when icorrect, player1 score 0. then if correct after incorrect,
+  // both scores increase at the same time
+  // PRESS INC TWICE on last image to be clicked.. problem
+  // BUG FIXED below. P was making it to P=2, where P=2 is not a
+  // valid index, which caused problems
+
   if (p == 0) {
+    document.getElementById("score1").innerText="Player 1, Score: "+ score[p];
     document.getElementById("score2").innerText="Player 2, Score: "+ score[p+1];
     }
+  else if (p>1) {
+    document.getElementById("score1").innerText="Player 1, Score: "+ score[p-2];
+    document.getElementById("score2").innerText="Player 2, Score: "+ score[p-1];
+  }
+
   else {
+    document.getElementById("score1").innerText="Player 1, Score: "+ score[p-1];
     document.getElementById("score2").innerText="Player 2, Score: "+ score[p];
     }
 
