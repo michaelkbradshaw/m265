@@ -7,7 +7,9 @@ var score_two = 0;
   // to incremented index for score[]
   // index 0 is player 1; index 1 is player 2.
 var p = 0;
-var score = [0,0]
+var score = [0,0];
+document.getElementById("score1").innerText="Player 1, Score: "+ score[0];
+document.getElementById("score2").innerText="Player 2, Score: "+ score[1];
   // REAL ANSWER
 var answer = "";
   // LIST OF OBJECTS (ANSWER KEY)
