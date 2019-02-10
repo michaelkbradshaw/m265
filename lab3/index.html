@@ -1,29 +1,37 @@
 <html>
-<head><title>Game:Player 1</title>
-<link href="game_style.css" type="text/css" rel="stylesheet"/>
-</head>
-<body>
+  <head><title>Game:Player 1</title>
+    <link href="game_style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body>
 
+      <!--Image Boxes-->
 
-<img id="box1" src="images\blackbox.jpeg" onclick="clicked_1()" disabled=false type="button"/>
-<img id="box2"src="images\blackbox.jpeg" onclick="clicked_2()" disabled=false type="button" />
-<img id="box3"src="images\blackbox.jpeg" onclick="clicked_3()" disabled=false type="button" />
-<p id="question"></p>
-<form id="answer" action="/action_page.php">
-  <label> Answer:<input type="text" value="" /></label>
-</form>
-<p id="result"></p>
-<p id="present"></p>
-<button onclick ="answerQ()" id="submit"  type="button">Submit</button>
-<br />
+    <input id="box1" type="image" src="images\blackbox.jpeg" onclick="clicked_1()"/>
+    <input id="box2" type="image" src="images\blackbox.jpeg" onclick="clicked_2()"/>
+    <input id="box3" type="image" src="images\blackbox.jpeg" onclick="clicked_3()"/>
+    <!-- <img id="box2"src="images\blackbox.jpeg" disabled onclick="clicked_2()"  type="button" /> -->
 
-<form id="procede" action="">
-<br />
-<button disabled=true id ="next" type="button">Next Level</button>
-</form>
-<p id="score"></p>
-<script src="game.js">
-</script>
+    <!--Text on page-->
+    <p id="question"></p>
+    <form id="answer" action="/action_page.php">
+      <label> Answer:<input type="text" value="" /></label>
+    </form>
+    <p id="result"></p>
+    <p id="present"></p>
 
-</body>
+    <!--Buttons-->
+    <input onclick ="answerQ()" id="submit"  type="button" value="Submit" />
+    <br />
+
+    <form id="procede" action="">
+      <br />
+      <button disabled=true id ="next" type="button">Next Level</button>
+    </form>
+    <p id="score"></p>
+
+    <!--Allow for JS interaction-->
+    <script src="game.js">
+    </script>
+
+  </body>
 </html>
