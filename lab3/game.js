@@ -113,12 +113,9 @@ var clicked_2 = function()
 {
     document.getElementById("submit").removeAttribute("disabled");
     document.getElementById("result").innerText="";
-
-
     var t = document.getElementById("box2");
     t.disabled=true;
     permit[1]=true;
-
     var x = document.getElementById("question");
     x.innerText=everything[1].question;
     answer = everything[1].capital;
@@ -138,9 +135,54 @@ var clicked_3 = function()
     answer = everything[2].capital;
 }
 
+//////////// NEXT PLAYER ////////////////
+
 // this function is called by a button using onclick, which is enabled
 // when all images have been clicked.
 var goNext = function(){
+  // reset/initialize for next Level
+  // reset booleans responsible for level progression
+  permit[0]=false;
+  permit[1]=false;
+  permit[2]=false;
+  // reset disabled input image buttons
+  document.getElementById('box1').disabled=false;
+  document.getElementById('box2').disabled=false;
+  document.getElementById('box3').disabled=false;
   window.location="second.html";
 
+}
+var clicked_4 = function()
+{
+    document.getElementById("submit").removeAttribute("disabled");
+    document.getElementById("result").innerText="";
+    var t = document.getElementById("box1");
+    t.disabled=true;
+    permit[0]=true;
+    var x = document.getElementById("question");
+    x.innerText=everything[3].question;
+    answer = everything[3].capital;
+}
+
+var clicked_5 = function()
+{
+    document.getElementById("submit").removeAttribute("disabled");
+    document.getElementById("result").innerText="";
+    var t = document.getElementById("box2");
+    t.disabled=true;
+    permit[1]=true;
+    var x = document.getElementById("question");
+    x.innerText=everything[4].question;
+    answer = everything[4].capital;
+}
+var clicked_6 = function()
+{
+    document.getElementById("submit").removeAttribute("disabled");
+    document.getElementById("result").innerText="";
+    var t = document.getElementById("box3");
+    t.disabled=true;
+    permit[2]=true;
+    var x = document.getElementById("question");
+    x.innerText=everything[5].question;
+    answer = everything[5].capital;
 }

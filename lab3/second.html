@@ -1,5 +1,40 @@
 <html>
-<body>
+  <head><title>Game:Player 2</title>
+    <link href="game_style.css" type="text/css" rel="stylesheet"/>
+  </head>
+  <body>
 
-</body>
+      <!--Image Boxes-->
+
+    <input id="box1" type="image" src="images\blackbox.jpeg" onclick="clicked_4()"/>
+    <input id="box2" type="image" src="images\blackbox.jpeg" onclick="clicked_5()"/>
+    <input id="box3" type="image" src="images\blackbox.jpeg" onclick="clicked_6()"/>
+    <!-- <img id="box2"src="images\blackbox.jpeg" disabled onclick="clicked_2()"  type="button" /> -->
+
+    <!--Text on page-->
+    <p id="question"></p>
+    <form id="answer" action="/action_page.php">
+      <label> Answer:<input type="text" value="" /></label>
+    </form>
+    <p id="result"></p>
+    <p id="present"></p>
+
+    <!--Buttons-->
+    <input onclick ="answerQ()" id="submit"  type="button" value="Submit" />
+    <br />
+
+    <form id="procede" action="second.html">
+      <br />
+      <input disabled id ="next" type="button" value="Go: Player 2" onclick="goNext()">
+    </form>
+
+    <!-- Player Scores -->
+    <p id="score1"></p>
+    <p id="score2"></p>
+
+    <!--Allow for JS interaction-->
+    <script src="game.js">
+    </script>
+
+  </body>
 </html>
