@@ -37,13 +37,14 @@ var answerQ = function()
   document.getElementById("present").innerHTML=inputQ;
 
   // Compare user Answer Input to Answer -- INFORM CORRECTNESS
+  document.getElementById("submit").disabled=true;
   var result;
   if (inputQ == answer) {
     result = document.getElementById("result");
     result.innerText="Correct";
     score[p]+=1;
     //document.getElementById("submit").removeAttribute("disabled");
-    document.getElementById("submit").disabled=true;
+
     }
   // CHECK for INVLAID user INPUT, such as submitting without entering
   else if(inputQ==""){
@@ -96,7 +97,7 @@ var clicked_1 = function()
 {
     document.getElementById("submit").removeAttribute("disabled");
     document.getElementById("result").innerText="";
-    document.getElementById("present").innerText="";
+
 
     var t = document.getElementById("box1");
     t.disabled=true;
@@ -112,7 +113,7 @@ var clicked_2 = function()
 {
     document.getElementById("submit").removeAttribute("disabled");
     document.getElementById("result").innerText="";
-    document.getElementById("present").innerText="";
+
 
     var t = document.getElementById("box2");
     t.disabled=true;
@@ -127,7 +128,6 @@ var clicked_3 = function()
 {
     document.getElementById("submit").removeAttribute("disabled");
     document.getElementById("result").innerText="";
-    document.getElementById("present").innerText="";
 
     var t = document.getElementById("box3");
     t.disabled=true;
@@ -138,6 +138,8 @@ var clicked_3 = function()
     answer = everything[2].capital;
 }
 
+// this function is called by a button using onclick, which is enabled
+// when all images have been clicked.
 var goNext = function(){
   window.location="second.html";
 
