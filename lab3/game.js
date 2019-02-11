@@ -83,12 +83,13 @@ var answerQ = function()
   // PROBLEM: Cannot set disabled attributes, so cannot check this way
   // Update: using booleans in list instead. bools are set when image clicked
 
-  if (permit[0] && permit[1] && permit[2]) {
+  if (permit[0] && permit[1] && permit[2] & (p_two_trun == false)) {
     //document.getElementById("procede").setAttribute("action", "second.html");
     document.getElementById("next").removeAttribute("disabled");
     //Time to change the score for player 2
     p_two_turn=true;
   }
+
 }
 
 
@@ -194,4 +195,27 @@ var clicked_6 = function()
     x.innerText=everything[5].question;
     answer = everything[5].capital;
       document.getElementById("box3").setAttribute("src","images/peru.jpg")
+}
+
+var win=function()
+{
+  if (permit[0] && permit[1] && permit[2])
+  {
+    
+    document.getElementById("win").removeAttribute("disabled");
+    if (score_one>score_two)
+    {
+      document.getElementById("win").innerText("Player 1 Wins")
+    }
+    else if (score_one<score_two)
+    {
+      document.getElementById("win").innerText("Player 2 Wins")
+    }
+    else
+    {
+      document.getElementById("win").innerText("Tie")
+    }
+  }
+
+
 }
