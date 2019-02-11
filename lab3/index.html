@@ -1,40 +1,27 @@
 <html>
-  <head><title id="who">Game:Player 1</title>
-    <link href="game_style.css" type="text/css" rel="stylesheet"/>
-  </head>
-  <body>
+<head><title>Instruction</title>
+<link href="game_style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body id="Instruction" class="instruction">
+  <h1>The nature of the game</h1>
+    <p> In this game, you and your partner will be assessed on your knowledge of
+      the capital of countries around the world. Each of you will have to identify the
+      the capital of 3 countries: 3 for Player 1 and 3 for Player 2. The two of you will compete for points.
+      Who will win?</p>
+  <h1>How to play!</h1>
+    <p> The questionare that you will be playing in the next few moments
+    is a cooperative game. You and the person beside you will need to
+    determine who is Player 1 and Player 2. By rule, Player 1 will need to
+    be the first on the keyboard and mouse. Choose now...
+    <br>
+    Note: Remember this...When you click on a random box, you have to answer the corresponding question.
+    In other words, if you click on box1 and do not answer the question but click on box2, you will not
+    have a second chance to go back. You will lost that point.
+    If you click on
+    <br>
 
-      <!--Image Boxes-->
+    <a href="first.html" target="_blank" >Go: Play Game, Player 1</a>
+    </p>
 
-    <input id="box1" type="image" src="images\blackbox.png" onclick="clicked_1()"/>
-    <input id="box2" type="image" src="images\blackbox.png" onclick="clicked_2()"/>
-    <input id="box3" type="image" src="images\blackbox.png" onclick="clicked_3()"/>
-    <!-- <img id="box2"src="images\blackbox.png" disabled onclick="clicked_2()"  type="button" /> -->
-
-    <!--Text on page-->
-    <p id="question"></p>
-    <form id="answer" action="/action_page.php">
-      <label> Answer:<input type="text" value="" /></label>
-    </form>
-    <p id="result"></p>
-    <p id="present"></p>
-
-    <!--Buttons-->
-    <input onclick ="answerQ()" id="submit"  type="button" value="Submit" />
-    <br />
-
-    <form id="procede" action="second.html">
-      <br />
-      <input disabled id ="next" type="button" value="Go: Player 2" onclick="goNext()">
-    </form>
-
-    <!-- Player Scores -->
-    <p id="score1"></p>
-    <p id="score2"></p>
-
-    <!--Allow for JS interaction-->
-    <script src="game.js">
-    </script>
-
-  </body>
+</body>
 </html>
