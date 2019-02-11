@@ -106,7 +106,7 @@ var clicked_1 = function()
     var x = document.getElementById("question");
     x.innerText=everything[0].question;
     answer = everything[0].capital;
-    document.getElementById("box3").setAttribute("src","images\Caracas.jpg");
+    document.getElementById("box3").setAttribute("src","images/Caracas.jpg");
 }
 
 var clicked_2 = function()
