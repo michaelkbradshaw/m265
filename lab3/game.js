@@ -199,8 +199,8 @@ var clicked_6 = function()
 
 var win=function()
 {
-  if (permit[0] && permit[1] && permit[2])
-  {
+
+
     if (score_one>score_two)
     {
       document.getElementById("win").innerText("Player 1 Wins");
@@ -213,7 +213,6 @@ var win=function()
     {
       document.getElementById("win").innerText("Tie");
     }
-  }
-
+  
 
 }
