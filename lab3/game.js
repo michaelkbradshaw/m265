@@ -203,16 +203,16 @@ var win=function()
 
     if (score_one>score_two)
     {
-      document.getElementById("win").innerText("Player 1 Wins");
+      document.getElementById("win").innerText="Player 1 Wins";
     }
     else if (score_one<score_two)
     {
-      document.getElementById("win").innerText("Player 2 Wins");
+      document.getElementById("win").innerText="Player 2 Wins";
     }
     else
     {
-      document.getElementById("win").innerText("Tie");
+      document.getElementById("win").innerText="Tie";
     }
-  
+
 
 }
