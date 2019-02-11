@@ -3,20 +3,20 @@
 var score_one = 0;
 var score_two = 0;
 
-
   // create a switch variable; after going to next page
   // for player two, update a global variable to correspond
   // to incremented index for score[]
   // index 0 is player 1; index 1 is player 2.
 var p_two_turn=false;
-var score = [0,0];
+
 if (document.getElementById("who").innerText=="Game:Player 2"){
-  p_two_turn=localStorage.getItem("bool_player");
-  score=localStorage.getItem("array_scores");
+  p_two_turn=(localStorage.getItem("bool_player") == "true");
+  score_one=parseInt(localStorage.getItem("p1"), 10);
+  score_two=parseInt(localStorage.getItem("p2"), 10);
 }
 
-document.getElementById("score1").innerText="Player 1, Score: "+ score[0];
-document.getElementById("score2").innerText="Player 2, Score: "+ score[1];
+document.getElementById("score1").innerText="Player 1, Score: "+ score_one;
+document.getElementById("score2").innerText="Player 2, Score: "+ score_two;
   // REAL ANSWER
 var answer = "";
   // LIST OF OBJECTS (ANSWER KEY)
@@ -39,7 +39,7 @@ var answerQ = function()
 {
   // Read and Store user Answer Input
   var getElemId = document.getElementById("answer");
-  console.log(getElemId);
+
   var inputQ = "";
   var i;
   for (i=0; i<getElemId.length; i++) {
@@ -54,9 +54,12 @@ var answerQ = function()
     result = document.getElementById("result");
     result.innerText="Correct";
     if (p_two_turn==false)
-    {score[0]+=1;}
+    {
+    score_one+=1;}
+
     else
-    {score[1]+=1;}
+    {
+    score_two+=1;}
   }
   // CHECK for INVLAID user INPUT, such as submitting without entering
   else if(inputQ==""){
@@ -74,14 +77,12 @@ var answerQ = function()
   // PRESS INC TWICE on last image to be clicked.. problem
   // BUG FIXED below. P was making it to P=2, where P=2 is not a
   // valid index, which caused problems
-  document.getElementById("score1").innerText="Player 1, Score: "+ score[0];
-  document.getElementById("score2").innerText="Player 2, Score: "+ score[1];
+  document.getElementById("score1").innerText="Player 1, Score: "+ score_one;
+  document.getElementById("score2").innerText="Player 2, Score: "+ score_two;
   // Open next level after all boxes have been clicked
   // PROBLEM: Cannot set disabled attributes, so cannot check this way
   // Update: using booleans in list instead. bools are set when image clicked
-  var truth_b1 = document.getElementById("box1").getAttribute("disabled");
-  var truth_b2 = document.getElementById("box2").getAttribute("disabled");
-  var truth_b3 = document.getElementById("box3").getAttribute("disabled");
+
   if (permit[0] && permit[1] && permit[2]) {
     //document.getElementById("procede").setAttribute("action", "second.html");
     document.getElementById("next").removeAttribute("disabled");
@@ -105,6 +106,7 @@ var clicked_1 = function()
     var x = document.getElementById("question");
     x.innerText=everything[0].question;
     answer = everything[0].capital;
+    document.getElementById("box3").setAttribute("src","images\Caracas.jpg");
 }
 
 var clicked_2 = function()
@@ -147,8 +149,9 @@ var goNext = function(){
   document.getElementById('box1').disabled=false;
   document.getElementById('box2').disabled=false;
   document.getElementById('box3').disabled=false;
-  localStorage.setItem("array_scores", score);
   localStorage.setItem("bool_player", p_two_turn);
+  localStorage.setItem("p1", score_one);
+  localStorage.setItem("p2", score_two);
 
   window.location="second.html";
 
