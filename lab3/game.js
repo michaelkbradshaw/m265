@@ -201,8 +201,6 @@ var win=function()
 {
   if (permit[0] && permit[1] && permit[2])
   {
-
-    document.getElementById("win").removeAttribute("disabled");
     if (score_one>score_two)
     {
       document.getElementById("win").innerText("Player 1 Wins")
