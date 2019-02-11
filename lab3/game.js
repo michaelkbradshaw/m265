@@ -83,7 +83,7 @@ var answerQ = function()
   // PROBLEM: Cannot set disabled attributes, so cannot check this way
   // Update: using booleans in list instead. bools are set when image clicked
 
-  if (permit[0] && permit[1] && permit[2] & (p_two_trun == false)) {
+  if (permit[0] && permit[1] && permit[2] & (p_two_turn == false)) {
     //document.getElementById("procede").setAttribute("action", "second.html");
     document.getElementById("next").removeAttribute("disabled");
     //Time to change the score for player 2
@@ -201,7 +201,7 @@ var win=function()
 {
   if (permit[0] && permit[1] && permit[2])
   {
-    
+
     document.getElementById("win").removeAttribute("disabled");
     if (score_one>score_two)
     {
