@@ -169,7 +169,7 @@ var clicked_4 = function()
     var x = document.getElementById("question");
     x.innerText=everything[3].question;
     answer = everything[3].capital;
-      document.getElementById("box1").setAttribute("src","images/Canada.jpg")
+      document.getElementById("box1").setAttribute("src","images/Canada.jpg");
 }
 
 var clicked_5 = function()
@@ -182,7 +182,7 @@ var clicked_5 = function()
     var x = document.getElementById("question");
     x.innerText=everything[4].question;
     answer = everything[4].capital;
-      document.getElementById("box2").setAttribute("src","images/egypt.jpg")
+      document.getElementById("box2").setAttribute("src","images/egypt.jpg");
 }
 var clicked_6 = function()
 {
@@ -194,7 +194,7 @@ var clicked_6 = function()
     var x = document.getElementById("question");
     x.innerText=everything[5].question;
     answer = everything[5].capital;
-      document.getElementById("box3").setAttribute("src","images/peru.jpg")
+      document.getElementById("box3").setAttribute("src","images/peru.jpg");
 }
 
 var win=function()
@@ -203,15 +203,15 @@ var win=function()
   {
     if (score_one>score_two)
     {
-      document.getElementById("win").innerText("Player 1 Wins")
+      document.getElementById("win").innerText("Player 1 Wins");
     }
     else if (score_one<score_two)
     {
-      document.getElementById("win").innerText("Player 2 Wins")
+      document.getElementById("win").innerText("Player 2 Wins");
     }
     else
     {
-      document.getElementById("win").innerText("Tie")
+      document.getElementById("win").innerText("Tie");
     }
   }
 
