@@ -106,7 +106,7 @@ var clicked_1 = function()
     var x = document.getElementById("question");
     x.innerText=everything[0].question;
     answer = everything[0].capital;
-    document.getElementById("box3").setAttribute("src","images/Caracas.jpg");
+    document.getElementById("box1").setAttribute("src","images/Ast.jpg");
 }
 
 var clicked_2 = function()
@@ -119,6 +119,7 @@ var clicked_2 = function()
     var x = document.getElementById("question");
     x.innerText=everything[1].question;
     answer = everything[1].capital;
+    document.getElementById("box2").setAttribute("src","images/Iraq.jpg");
 }
 
 var clicked_3 = function()
@@ -133,6 +134,7 @@ var clicked_3 = function()
     var x = document.getElementById("question");
     x.innerText=everything[2].question;
     answer = everything[2].capital;
+    document.getElementById("box3").setAttribute("src","images/Caracas.jpg");
 }
 
 //////////// NEXT PLAYER ////////////////
@@ -166,6 +168,7 @@ var clicked_4 = function()
     var x = document.getElementById("question");
     x.innerText=everything[3].question;
     answer = everything[3].capital;
+      document.getElementById("box1").setAttribute("src","images/Canada.jpg")
 }
 
 var clicked_5 = function()
@@ -178,6 +181,7 @@ var clicked_5 = function()
     var x = document.getElementById("question");
     x.innerText=everything[4].question;
     answer = everything[4].capital;
+      document.getElementById("box2").setAttribute("src","images/egypt.jpg")
 }
 var clicked_6 = function()
 {
@@ -189,4 +193,5 @@ var clicked_6 = function()
     var x = document.getElementById("question");
     x.innerText=everything[5].question;
     answer = everything[5].capital;
+      document.getElementById("box3").setAttribute("src","images/peru.jpg")
 }
